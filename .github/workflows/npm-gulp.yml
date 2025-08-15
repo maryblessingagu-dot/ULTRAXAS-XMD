@@ -1,0 +1,28 @@
+ NodeJS with Gulp
+
+on:control + shift + m
+  push:control space 
+    branches: [ "main" ]
+  pull_request:status reply 
+    branches: [ "main" ]
+
+jobs:reply 
+  build:antiliknk
+    runs-on: ubuntu-latest
+
+    strategy:esc
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+
+    steps:control + space
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Build
+      run: |esc
+        npm install
+        gulp
